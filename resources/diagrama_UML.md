@@ -58,23 +58,9 @@ class Playlist {
 
 }
 
-class Prediccion {
-    <<Abstract>>
-    +entrenarModelo()
-    +predecirPopularidad()
-    +evaluarModelo()
-}
-
-class Graficas {
-    <<Abstract>>
-    +generarGrafica()
-    +mostrarResultados()
-}
 
 Cancion o-- "*" Artista : es interpretada por
 Playlist o-- "*" Cancion : contiene
 
 Artista "*" -- "*" Playlist : aparece en
 
-Prediccion ..> Cancion : predice sobre
-Graficas ..> Cancion : visualiza
