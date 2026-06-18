@@ -20,13 +20,9 @@ class Cancion {
     is_playable: bool
     release_date: date
 
-    artists_uris: list<string>
-    artists_names: list<artista>
-    artists_popularities: list<int>
-    artists_genres: list<list<string>>
-    artists_followers: list<int>
+    artists: Artista
 
-    playlist_uris: list<str>
+    playlists: Playlist
 
     popularity: int
     danceability: float
@@ -43,7 +39,8 @@ class Cancion {
     duration_ms: int
     time_signature: int
 
-    metodo_lol()
+    total_artistas()
+    total_playlists():
 }
 
 
@@ -59,8 +56,7 @@ class Playlist {
 }
 
 
-Cancion o-- "*" Artista : es interpretada por
-Playlist o-- "*" Cancion : contiene
+Cancion "*" o-- "*" Artista : es interpretada por
+Playlist "*" -- "*" Cancion : aparece en
 
-Artista "*" -- "*" Playlist : aparece en
 
